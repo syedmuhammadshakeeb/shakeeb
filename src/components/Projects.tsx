@@ -41,7 +41,7 @@ const Projects = () => {
         }}>
               {/* Project Logo */}
               <div className="h-48 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center p-6">
-                <img src={project.logo} alt={project.title} className="max-w-full max-h-full object-cover" />
+                <img src={project.logo} alt={project.title} className="max-w-full max-h-full object-fill" />
               </div>
 
               <div className="p-6">
