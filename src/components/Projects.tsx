@@ -47,11 +47,11 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className="glass rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
               {/* Project Logo */}
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center overflow-hidden">
+              <div className="h-48 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center p-6">
                 <img
                   src={project.logo}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
 
