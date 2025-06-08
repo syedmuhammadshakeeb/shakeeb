@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-up">
           {/* Profile Picture */}
-          <div className="mb-8 mt-10 relative inline-block">
+          <div className="mb-8 mt-20 relative inline-block">
             <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-primary to-secondary p-1 animate-glow">
               <img
                 src="/lovable-uploads/d79037fe-31fa-4b28-9fa9-71b426345a98.png"

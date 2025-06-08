@@ -15,7 +15,7 @@ const Projects = () => {
     },
     {
       title: "Bahrain Tourism App",
-      logo: "/lovable-uploads/758b4605-afee-45a5-9fca-df8b3e8dd9d4.png",
+      logo: "/lovable-uploads/4748e5f3-6939-4b3e-b25c-7a07f40003a3.png",
       description: "Comprehensive tourist planning tool with Google Maps integration and offline support using Hive database.",
       features: ["Tourist planning", "Google Maps integration", "Offline support", "Local attractions"],
       technologies: ["Flutter", "Google Maps API", "Hive", "REST APIs", "Geolocation"],

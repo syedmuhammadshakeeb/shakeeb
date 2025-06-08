@@ -22,11 +22,11 @@
     --primary: 192 100% 50%;
     --primary-foreground: 218 23% 6%;
 
-    --secondary: 140 100% 50%;
-    --secondary-foreground: 218 23% 6%;
+    --secondary: 258 30% 35%;
+    --secondary-foreground: 210 40% 98%;
 
-    --accent: 140 100% 50%;
-    --accent-foreground: 218 23% 6%;
+    --accent: 258 30% 35%;
+    --accent-foreground: 210 40% 98%;
 
     --muted: 218 23% 12%;
     --muted-foreground: 215.4 16.3% 56.9%;
@@ -89,7 +89,7 @@
     box-shadow: 0 0 20px rgba(0, 207, 255, 0.5);
   }
   to {
-    box-shadow: 0 0 30px rgba(0, 207, 255, 0.8), 0 0 40px rgba(0, 255, 135, 0.3);
+    box-shadow: 0 0 30px rgba(0, 207, 255, 0.8), 0 0 40px rgba(69, 54, 123, 0.3);
   }
 }
 
