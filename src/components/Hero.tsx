@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-up">
           {/* Profile Picture */}
-          <div className="mb-8 mt-20 relative inline-block">
+          <div className="mb-8 mt-20 pt-8 relative inline-block">
             <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-primary to-secondary p-1 animate-glow">
               <img
                 src="/lovable-uploads/d79037fe-31fa-4b28-9fa9-71b426345a98.png"
@@ -42,7 +42,7 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 mb-8">
             <Button
               className="bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-3 text-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
