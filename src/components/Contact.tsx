@@ -48,13 +48,13 @@ const Contact = () => {
       icon: <Linkedin className="text-primary" size={20} />,
       label: "LinkedIn",
       value: "LinkedIn Profile",
-      href: "https://linkedin.com/in/shakeeb"
+      href: "https://www.linkedin.com/in/syedshakeeb01/"
     },
     {
       icon: <Github className="text-secondary" size={20} />,
       label: "GitHub",
       value: "GitHub Profile",
-      href: "https://github.com/shakeeb"
+      href: "https://github.com/syedmuhammadshakeeb"
     }
   ];
 
