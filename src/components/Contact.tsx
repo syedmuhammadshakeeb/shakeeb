@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,16 +13,42 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would send this data to a backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsLoading(true);
+
+    try {
+      // Replace 'YOUR_TEMPLATE_ID' and 'YOUR_PUBLIC_KEY' with your actual EmailJS credentials
+      await emailjs.send(
+        'service_7o3alqg', // Your service ID
+        'YOUR_TEMPLATE_ID', // You need to create a template in EmailJS dashboard
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'shakeeb12a@gmail.com', // Your email
+        },
+        'YOUR_PUBLIC_KEY' // Your public key from EmailJS dashboard
+      );
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -111,10 +138,11 @@ const Contact = () => {
                 </div>
                 <Button
                   type="submit"
+                  disabled={isLoading}
                   className="w-full bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:shadow-lg hover:shadow-primary/25"
                 >
                   <Send size={16} className="mr-2" />
-                  Send Message
+                  {isLoading ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </div>
