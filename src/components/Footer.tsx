@@ -5,12 +5,12 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Github size={20} />,
-      href: "https://github.com/shakeeb",
+      href: "https://github.com/syedmuhammadshakeeb",
       label: "GitHub"
     },
     {
       icon: <Linkedin size={20} />,
-      href: "https://linkedin.com/in/shakeeb",
+      href: "https://www.linkedin.com/in/syedshakeeb01/",
       label: "LinkedIn"
     },
     {
