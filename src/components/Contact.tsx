@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, Github, Linkedin, Phone, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -21,17 +20,16 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      // Replace 'YOUR_TEMPLATE_ID' and 'YOUR_PUBLIC_KEY' with your actual EmailJS credentials
       await emailjs.send(
         'service_7o3alqg', // Your service ID
-        'YOUR_TEMPLATE_ID', // You need to create a template in EmailJS dashboard
+        'service_7o3alqg', // Your template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_email: 'shakeeb12a@gmail.com', // Your email
         },
-        'YOUR_PUBLIC_KEY' // Your public key from EmailJS dashboard
+        'MNGVT9iZeWb_eiWfB' // Your public key
       );
 
       toast({
