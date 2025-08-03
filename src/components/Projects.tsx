@@ -35,58 +35,86 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => <div key={index} className="glass rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-fade-up" style={{
-          animationDelay: `${index * 0.1}s`
-        }}>
-              {/* Project Logo */}
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center p-6">
-                <img src={project.logo} alt={project.title} className="max-w-full max-h-full object-fill" />
-              </div>
-
-              <div className="p-6">
-                {/* Project Type Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full text-primary text-sm font-medium mb-4">
-                  <Smartphone size={14} />
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div key={index} className="group glass rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 animate-fade-up hover-scale" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
+              {/* Project Image with Overlay */}
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+                <img 
+                  src={project.logo} 
+                  alt={project.title} 
+                  className="w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Project Type Badge - Floating */}
+                <div className="absolute top-4 right-4 inline-flex items-center gap-2 px-3 py-1.5 bg-background/90 backdrop-blur-sm border border-primary/20 rounded-full text-primary text-sm font-medium shadow-lg">
+                  <Smartphone size={12} />
                   {project.type}
                 </div>
+              </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-3">{project.title}</h3>
-                <p className="text-foreground/80 mb-4 leading-relaxed">{project.description}</p>
+              <div className="p-6 space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {project.description}
+                  </p>
+                </div>
 
                 {/* Features */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-primary mb-2">Key Features:</h4>
-                  <div className="flex flex-wrap gap-1">
-                    {project.features.map((feature, idx) => <span key={idx} className="px-2 py-1 bg-background/50 text-foreground/80 rounded text-xs border border-primary/20">
+                <div>
+                  <h4 className="text-sm font-semibold text-primary mb-2">Key Features</h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.features.map((feature, idx) => (
+                      <span key={idx} className="px-2.5 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20">
                         {feature}
-                      </span>)}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
                 {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-secondary mb-2">Tech Stack:</h4>
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.map((tech, idx) => <span key={idx} className="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs">
+                <div>
+                  <h4 className="text-sm font-semibold text-secondary mb-2">Technologies</h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.technologies.map((tech, idx) => (
+                      <span key={idx} className="px-2.5 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-medium">
                         {tech}
-                      </span>)}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
-                  {project.link && <Button size="sm" className="flex-1 bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:shadow-lg hover:shadow-primary/25" onClick={() => window.open(project.link, '_blank')}>
-                      <ExternalLink size={16} className="mr-2" />
+                <div className="flex gap-3 pt-2">
+                  {project.link && (
+                    <Button 
+                      size="sm" 
+                      className="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/30 transition-all duration-300" 
+                      onClick={() => window.open(project.link, '_blank')}
+                    >
+                      <ExternalLink size={14} className="mr-2" />
                       View App
-                    </Button>}
-                  <Button size="sm" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    <Github size={16} className="mr-2" />
+                    </Button>
+                  )}
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                    onClick={() => window.open('https://github.com/shakeebklab', '_blank')}
+                  >
+                    <Github size={14} className="mr-2" />
                     Code
                   </Button>
                 </div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
     </section>;
