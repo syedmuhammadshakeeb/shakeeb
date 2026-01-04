@@ -1,3 +1,4 @@
+import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Projects = () => {
@@ -7,28 +8,32 @@ const Projects = () => {
     features: ["Real-time shopping", "Live auctions", "Live streaming", "Interactive UI"],
     technologies: ["Flutter", "Dart", "Firebase", "WebRTC", "Real-time APIs"],
     playStoreLink: "https://play.google.com/store/apps/details?id=com.siinshop.app",
-    appStoreLink: "https://apps.apple.com/bh/app/siin-%D8%B3%D9%8A%D9%86/id6451072889"
+    appStoreLink: "https://apps.apple.com/bh/app/siin-%D8%B3%D9%8A%D9%86/id6451072889",
+    apkLink: null
   }, {
     title: "Bahrain Tourism App", 
     description: "Comprehensive tourist planning tool with Google Maps integration and offline support using Hive database.",
     features: ["Tourist planning", "Google Maps integration", "Offline support", "Local attractions"],
     technologies: ["Flutter", "Google Maps API", "Hive", "REST APIs", "Geolocation"],
     playStoreLink: "https://play.google.com/store/apps/details?id=com.btea.tg",
-    appStoreLink: "https://apps.apple.com/us/app/visit-bahrain/id1136770500"
+    appStoreLink: "https://apps.apple.com/us/app/visit-bahrain/id1136770500",
+    apkLink: null
   }, {
     title: "Aljunobya",
     description: "Southern Governorate project helping people enjoy camping season in Bahrain with event discovery, dynamic booking forms, live Zoom meetings, and integrated chat support.",
     features: ["Google Maps events", "Dynamic booking forms", "Zoom SDK integration", "Kommunicate chat"],
     technologies: ["Flutter", "Google Maps API", "Zoom SDK", "Kommunicate", "REST APIs"],
     playStoreLink: "https://play.google.com/store/apps/details?id=com.klabs.southerngovernorate&hl=en",
-    appStoreLink: "https://apps.apple.com/us/app/aljunobya/id1480147210"
+    appStoreLink: "https://apps.apple.com/us/app/aljunobya/id1480147210",
+    apkLink: null
   }, {
     title: "RCSI AI Sim App",
     description: "Advanced simulated clinical AI patient training platform with real-time interaction and comprehensive feedback systems.",
     features: ["AI simulation", "Clinical training", "Real-time interaction", "Feedback system"],
     technologies: ["Flutter", "AI/ML APIs", "Real-time communication", "Database integration"],
     playStoreLink: null,
-    appStoreLink: null
+    appStoreLink: null,
+    apkLink: "https://drive.google.com/file/d/19Wj3oqjMq-cq9alxbzzHhCimJy1eA2aO/view"
   }];
 
   return (
@@ -106,7 +111,16 @@ const Projects = () => {
                       App Store
                     </Button>
                   )}
-                  {!project.playStoreLink && !project.appStoreLink && (
+                  {project.apkLink && (
+                    <Button 
+                      className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 gap-2" 
+                      onClick={() => window.open(project.apkLink!, '_blank')}
+                    >
+                      <Download className="w-5 h-5" />
+                      Download APK
+                    </Button>
+                  )}
+                  {!project.playStoreLink && !project.appStoreLink && !project.apkLink && (
                     <div className="text-center text-muted-foreground text-sm py-2">
                       Coming Soon
                     </div>
