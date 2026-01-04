@@ -7,14 +7,21 @@ const Projects = () => {
     features: ["Real-time shopping", "Live auctions", "Live streaming", "Interactive UI"],
     technologies: ["Flutter", "Dart", "Firebase", "WebRTC", "Real-time APIs"],
     playStoreLink: "https://play.google.com/store/apps/details?id=com.siinshop.app",
-    appStoreLink: null
+    appStoreLink: "https://apps.apple.com/bh/app/siin-%D8%B3%D9%8A%D9%86/id6451072889"
   }, {
     title: "Bahrain Tourism App", 
     description: "Comprehensive tourist planning tool with Google Maps integration and offline support using Hive database.",
     features: ["Tourist planning", "Google Maps integration", "Offline support", "Local attractions"],
     technologies: ["Flutter", "Google Maps API", "Hive", "REST APIs", "Geolocation"],
     playStoreLink: "https://play.google.com/store/apps/details?id=com.btea.tg",
-    appStoreLink: null
+    appStoreLink: "https://apps.apple.com/us/app/visit-bahrain/id1136770500"
+  }, {
+    title: "Aljunobya",
+    description: "Southern Governorate project helping people enjoy camping season in Bahrain with event discovery, dynamic booking forms, live Zoom meetings, and integrated chat support.",
+    features: ["Google Maps events", "Dynamic booking forms", "Zoom SDK integration", "Kommunicate chat"],
+    technologies: ["Flutter", "Google Maps API", "Zoom SDK", "Kommunicate", "REST APIs"],
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.klabs.southerngovernorate&hl=en",
+    appStoreLink: "https://apps.apple.com/us/app/aljunobya/id1480147210"
   }, {
     title: "RCSI AI Sim App",
     description: "Advanced simulated clinical AI patient training platform with real-time interaction and comprehensive feedback systems.",
